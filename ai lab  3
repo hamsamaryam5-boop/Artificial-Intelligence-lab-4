@@ -1,0 +1,93 @@
+Lab Task
+1.	Write a Python function to calculate the factorial of a number (a non- negative integer). the function accepts the number as an argument.
+ Code :
+def factorial(num):
+    if num < 0:
+        return "Factorial is not defined for negative numbers."
+    elif num == 0 or num == 1:
+        return 1
+    else:
+        fact = 1
+        for i in range(2, num + 1):
+            fact *= i
+        return fact
+number = int(input("Enter a number: "))
+print("The factorial of", number, "is:", factorial(number))  
+output: 
+ 
+
+2. Write a Python function that takes a list and returns a new list with unique elements of the
+first list.
+a) Sample List : [1,2,3,3,4,4,5,3,7,5]
+b) Unique List: [1, 2, 3, 4, 5, 7]
+
+code :
+def unique_list(lst):
+    return list(set(lst))
+
+# Sample Input
+sample_list = [1, 2, 3, 3, 4, 4, 5, 3, 7, 5]
+print("Unique List:", unique_list(sample_list))
+output:
+ 
+
+
+3.	Write a Python function to show the first ‘n’ even numbers and then return the sum and product of that even numbers outside the function.
+
+Code :
+
+def even_numbers(n):
+    evens = []  # list to store even numbers
+    for i in range(1, n+1):
+        evens.append(2 * i)
+    print("First", n, "even numbers:", evens)
+    return evens  # return the list
+n = int(input("Enter how many even numbers you want: "))
+even_list = even_numbers(n)
+sum_evens = sum(even_list)
+
+product = 1
+for num in even_list:
+    product *= num
+
+print("Sum of even numbers:", sum_evens)
+print("Product of even numbers:", product)
+output ;
+ 
+
+
+
+4.	Write a python program to match two string using functions
+Code :
+def match_strings(str1, str2):
+    if str1 == str2:
+        print("Both strings match!")
+    else:
+        print("Strings do not match.")
+
+# Example usage
+match_strings("hello", "hello")
+match_strings("Hello", "hi")
+
+output:
+ 
+
+
+5.	Write a python program to name user login system using function.
+Code :
+def login_system():
+    username = input("Enter username: ")
+    password = input("Enter password: ")
+    correct_username = "Hamsa Maryam"
+    correct_password = "12345"
+
+    if username == correct_username and password == correct_password:
+        print("Login successful! Welcome,", username)
+    else:
+        print("Invalid username or password.")
+login_system()
+output :
+ 
+
+Conclusion:
+All these Python programs help in understanding the basic concepts of programming such as loops, conditions, functions, and data structures. The factorial program teaches mathematical calculations using loops and conditions. The unique list program shows how to remove duplicate elements from a list. The string and tuple programs help in practicing string operations, counting, and arithmetic on tuples. Together, these exercises build a strong foundation in Python programming and improve logical thinking and problem-solving skills.
