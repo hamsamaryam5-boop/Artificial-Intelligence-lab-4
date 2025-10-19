@@ -1,0 +1,126 @@
+Implementation of OOP Concepts in Python
+ Objective
+• To understand basics of Object and Classes.
+• Implementing Constructors and its types.
+• Implementing inheritance
+Lab Task:
+1.	Write a Python class named Circle constructed by a radius and two methods which will compute the area and the perimeter of a circle.
+
+Code :
+import math
+class Circle:
+    def __init__(self, radius):
+        self.radius = radius
+    def area(self):
+        return math.pi * (self.radius ** 2)
+    def perimeter(self):
+        return 2 * math.pi * self.radius
+r = float(input("Enter the radius of the circle: "))
+circle = Circle(r)
+print("Area of circle:", circle.area())
+print("Perimeter of circle:", circle.perimeter())
+
+
+output :
+ 
+
+2.	Write a Python class to implement pow(x, n). Do not use built-in math.pow() function for this code. Also handle this code for all +ve as well as -ve numbers.
+
+Code :
+class Power:
+    def __init__(self, x, n):
+        self.x = x
+        self.n = n
+
+    def pow(self):
+        result = 1
+        if self.n > 0:
+            for _ in range(self.n):
+                result *= self.x
+        elif self.n < 0:
+            for _ in range(-self.n):
+                result *= self.x
+            result = 1 / result  
+        return result
+
+x = float(input("Enter the base number (x): "))
+n = int(input("Enter the power (n): "))
+
+power = Power(x, n)
+print(f"{x} raised to the power {n} is:", power.pow())
+
+output :
+
+ 
+
+3.	Write a Python code for the following figure
+Code :
+class Item:
+    def __init__(self, name, description, price):   
+        self.name = name
+        self.description = description
+        self.price = price
+
+    def viewFullDescription(self):
+        print(f"Name: {self.name}")
+        print(f"Description: {self.description}")
+        print(f"Price: {self.price}")
+
+    def addToShoppingBasket(self):
+        print(f"{self.name} added to shopping basket.")
+
+    def removeFromShoppingBasket(self):
+        print(f"{self.name} removed from shopping basket.")
+class MP3(Item):
+    def __init__(self, name, description, price, artist, duration):   
+        super().__init__(name, description, price)
+        self.artist = artist
+        self.duration = duration
+
+    def play(self):
+        print(f"Playing MP3: {self.name} by {self.artist}")
+
+    def download(self):
+        print(f"Downloading MP3: {self.name}")
+class DVD(Item):
+    def __init__(self, name, description, price, certificate, duration, actors): 
+        super().__init__(name, description, price)
+        self.certificate = certificate
+        self.duration = duration
+        self.actors = actors
+
+    def viewTrailer(self):
+        print(f"Viewing trailer for DVD: {self.name}")
+class Book(Item):
+    def __init__(self, name, description, price, author, numberOfPages, genre):   
+        super().__init__(name, description, price)
+        self.author = author
+        self.numberOfPages = numberOfPages
+        self.genre = genre
+
+    def previewContent(self):
+        print(f"Previewing content of book: {self.name}")
+
+if __name__ == "__main__":   
+    mp3 = MP3("Shape of You", "Popular song", 250, "Ed Sheeran", "4:24")
+    dvd = DVD("Avengers: Endgame", "Action Movie", 1500, "PG-13", "3h 2m", ["Robert Downey Jr.", "Chris Evans"])
+    book = Book("Python Basics", "Learn Python Programming", 900, "John Doe", 300, "Education")
+
+    mp3.viewFullDescription()
+    mp3.play()
+    mp3.download()
+
+    print("------")
+
+    dvd.viewFullDescription()
+    dvd.viewTrailer()
+
+    print("------")
+
+    book.viewFullDescription()
+    book.previewContent()
+output :
+ 
+
+Conclusion :
+In conclusion, these three Python programs effectively demonstrate the use of object-oriented programming (OOP) concepts such as classes, inheritance, and methods. The base class Item defines common properties like name, description, and price, along with general methods for viewing item details and managing a shopping basket. The derived classes MP3, DVD, and Book inherit these features while adding their own specific attributes and functions, such as playing or downloading music, viewing a movie trailer, or previewing book content. This structure helps reduce code repetition, improve organization, and make the program more modular and reusable. Overall, the codes clearly show how inheritance and class-based design make complex systems easier to manage and extend.
